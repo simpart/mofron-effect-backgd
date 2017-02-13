@@ -1,0 +1,19 @@
+{
+  "name": "mofron-effect-backgd",
+  "version": "0.0.8",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simpart/mofron-effect-backgd.git"
+  },
+  "author": "",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/simpart/mofron-effect-backgd/issues"
+  },
+  "homepage": "https://github.com/simpart/mofron-effect-backgd#readme"
+}
