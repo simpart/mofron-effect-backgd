@@ -30,4 +30,4 @@ mofron.effect.Backgd = class extends mofron.Effect {
         }
     }
 }
-module.exports = mofron.effect.Backed;
+module.exports = mofron.effect.Backgd;
