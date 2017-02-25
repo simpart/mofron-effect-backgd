@@ -8,37 +8,26 @@
  */
 mofron.effect.Backgd = class extends mofron.Effect {
     
-    initEffect (flg, eff) {
+    enable (tgt) {
         try {
-            if (true === flg) {
-                eff.target.style('height'  , '0%');
-                eff.target.style('width'   , '0%');
-                eff.target.style('position', null);
-            } else {
-                eff.target.style('height'  , '100%');
-                eff.target.style('width'   , '100%');
-                eff.target.style('position', 'fixed');
-            }
+            tgt.style('height'  , '100%');
+            tgt.style('width'   , '100%');
+            tgt.style('position', 'fixed');
         } catch (e) {
             console.error(e.stack);
             throw e;
         }
     }
     
-    effectConts (flg, eff) {
+    disable (tgt) {
         try {
-            if (true === flg) {
-                eff.target.style('height'  , '100%');
-                eff.target.style('width'   , '100%');
-                eff.target.style('position', 'fixed');
-            } else {
-                eff.target.style('height'  , '0%');
-                eff.target.style('width'   , '0%');
-                eff.target.style('position', null);
-            }
+            tgt.style('height'  , '0%');
+            tgt.style('width'   , '0%');
+            tgt.style('position', null);
         } catch (e) {
             console.error(e.stack);
             throw e;
         }
     }
 }
+module.exports = mofron.effect.Backed;
