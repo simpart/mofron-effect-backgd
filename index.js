@@ -21,11 +21,8 @@ mofron.effect.Backgd = class extends mofron.Effect {
     
     enable (tgt) {
         try {
-            tgt.style({
-                'height'   : '100%',
-                'width'    : '100%',
-                'position' : 'fixed'
-            });
+            tgt.size('100%', '100%');
+            tgt.style({ 'position' : 'fixed' });
         } catch (e) {
             console.error(e.stack);
             throw e;
@@ -34,11 +31,8 @@ mofron.effect.Backgd = class extends mofron.Effect {
     
     disable (tgt) {
         try {
-            tgt.style({
-                'height'   : '0%',
-                'width'    : '0%',
-                'position' : null
-            });
+            tgt.size('0%', '0%');
+            tgt.style({ 'position' : null });
         } catch (e) {
             console.error(e.stack);
             throw e;
@@ -46,3 +40,4 @@ mofron.effect.Backgd = class extends mofron.Effect {
     }
 }
 module.exports = mofron.effect.Backgd;
+/* end of file */
