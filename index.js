@@ -1,5 +1,6 @@
 /**
- * @file index.js
+ * @file mofron-effect-backgd/index.js
+ * @brief background effect for mofron
  * @author simpart
  */
 
@@ -7,18 +8,27 @@
  * @class effect.Backgd
  */
 mofron.effect.Backgd = class extends mofron.Effect {
-    
-    constructor (prm) {
+    /**
+     * initialize effect
+     *
+     * @note private method
+     */
+    constructor (po) {
         try {
             super();
             this.name('Backgd');
-            this.prmOpt(prm);
+            this.prmOpt(po);
         } catch (e) {
             console.error(e.stack);
             throw e;
         }
     }
     
+    /**
+     * enable background target component
+     *
+     * @note private method
+     */
     enable (tgt) {
         try {
             tgt.size('100%', '100%');
@@ -29,6 +39,11 @@ mofron.effect.Backgd = class extends mofron.Effect {
         }
     }
     
+    /**
+     * disable background
+     *
+     * @note private method
+     */
     disable (tgt) {
         try {
             tgt.size('0%', '0%');
