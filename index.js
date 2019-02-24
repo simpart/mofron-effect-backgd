@@ -25,65 +25,27 @@ mofron.effect.Backgd = class extends mofron.Effect {
         }
     }
     
-    /**
-     * enable background target component
-     *
-     * @note private method
-     */
-    enable (tgt) {
+    contents (cmp) {
         try {
-            let off = this.offset();
-            let val = [
-                (100 + off[0]) + '%',
-                (100 + off[1]) + '%'
-            ];
-            tgt.size(val[0], val[1]);
-            tgt.style({ 'position' : 'fixed' });
+            cmp.style({ 'position' : 'fixed' });
+            let val = this.value();
+            cmp.size(val[0] + '%', val + '%');
         } catch (e) {
             console.error(e.stack);
             throw e;
         }
     }
     
-    /**
-     * disable background
-     *
-     * @note private method
-     */
-    disable (tgt) {
+    value (x, y) {
         try {
-            tgt.size('0%', '0%');
-            tgt.style({ 'position' : null });
-        } catch (e) {
-            console.error(e.stack);
-            throw e;
-        }
-    }
-    
-    offset (x, y) {
-        try {
-            if (undefined === x) {
+            if ( (undefined === x) && (undefined === y) ) {
                 /* getter */
-                return [ this.offset_x(), this.offset_y() ];
+                return [this.getMember('value_x'), this.getMember('value_y')];
             }
             /* setter */
-            this.offset_x(x);
-            this.offset_y(y);
+            this.member('value_x', 'number', x, 100);
+            this.member('value_y', 'number', y, 100);
         } catch (e) {
-            console.error(e.stack);
-            throw e;
-        }
-    }
-    
-    offset_x (prm) {
-        try { return this.member('offset_x', 'number', prm, 0); } catch (e) {
-            console.error(e.stack);
-            throw e;
-        }
-    }
-    
-    offset_y (prm) {
-        try { return this.member('offset_y', 'number', prm, 0); } catch (e) {
             console.error(e.stack);
             throw e;
         }
